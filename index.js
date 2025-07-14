@@ -157,7 +157,7 @@ if (!existsSync('levanter')) {
 
 // Add an HTTP server to bind to a specific port
 const http = require('http');
-const PORT = 3000; // Explicitly use port 3000
+const PORT = process.env.PORT || 3000; // Use Render's provided port or fallback to 3000
 
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
